@@ -1,3 +1,4 @@
-App.module "PageApp.Show", (Show, App, Backbone, Marionette, $, _) ->
+@Demo.module "PageApp.Show", (Show, StarterApp, Backbone, Marionette, $, _) ->
+ 
   Show.Message = Marionette.ItemView.extend(template: "#page-message")
   return

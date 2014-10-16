@@ -1,6 +1,6 @@
-App.module "PageApp.Show", (Show, App, Backbone, Marionette, $, _) ->
+@Demo.module "PageApp.Show", (Show, StarterApp, Backbone, Marionette, $, _) ->
 
   Show.Controller = showPage: ->
     view = new Show.Message()
-    App.mainRegion.show view
+    StarterApp.mainRegion.show view
   return

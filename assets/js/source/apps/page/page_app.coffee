@@ -1,17 +1,18 @@
-App.module "PageApp", (PageApp, App, Backbone, Marionette, $, _) ->
+@Demo.module "PageApp", (PageApp, StarterApp, Backbone, Marionette, $, _) ->
   PageApp.Router = Marionette.AppRouter.extend(appRoutes:
-    page: "showPage"
+    "page": "showPage"
   )
+
   API = showPage: ->
     PageApp.Show.Controller.showPage()
     return
 
-  ContactManager.on "page:show", ->
-    ContactManager.navigate "page"
+  StarterApp.on "page:show", ->
+    StarterApp.navigate "page"
     API.showPage()
     return
 
-  ContactManager.addInitializer ->
+  StarterApp.addInitializer ->
     new PageApp.Router(controller: API)
     return
 

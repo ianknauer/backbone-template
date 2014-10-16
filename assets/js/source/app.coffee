@@ -1,19 +1,21 @@
-App = new Marionette.Application()
+@Demo = do (Backbone, Marionette) -> 
+  StarterApp = new Marionette.Application()
 
-App.addRegions
-  headerRegion: "#header-region"
-  mainRegion: "#main-region"
+  StarterApp.addRegions
+    mainRegion: "#main-region"
 
-App.navigate = (route, options) ->
-  options or (options = {})
-  Backbone.history.navigate route, options
-  return
+  StarterApp.navigate = (route, options) ->
+    options or (options = {})
+    Backbone.history.navigate route, options
+    return
 
-App.getCurrentRoute = ->
-  Backbone.history.fragment
+  StarterApp.getCurrentRoute = ->
+    Backbone.history.fragment
 
-App.on "start", ->
-  if Backbone.history
-    Backbone.history.start()
-    App.trigger "page:show"  if @getCurrentRoute() is ""
-  return
+  StarterApp.on "start", ->
+    if Backbone.history
+      Backbone.history.start()
+      StarterApp.trigger "page:show" if @getCurrentRoute() is ""
+    return
+
+  StarterApp
